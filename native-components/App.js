@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import Button from './Button';
 
 export default class App extends React.Component {
 
@@ -21,7 +22,8 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.name}</Text>
+        <Text style={styles.text}>{this.state.name}</Text>
+        <Button title="Press Me!" />
       </View>
     );
   }
@@ -30,8 +32,12 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#95a5a6',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    color: '#000',
+    fontSize: 20,
+  }
 });
