@@ -1,23 +1,41 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Button, View } from 'react-native';
+import getStyleSheetForTheme from './styles';
 
-export default class App extends React.Component {
+export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      darkTheme: false
+    };
+    this.toggleTheme = this.toggleTheme.bind(this);
+  }
+
+  toggleTheme() {
+    this.setState({darkTheme: !this.state.darkTheme})
+  };
+
   render() {
+
+    const styles = getStyleSheetForTheme(this.state.darkTheme);
+    const backgroundColor = StyleSheet.flatten(styles.container).backgroundColor;
+
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <View style={styles.box}>
+            <Button title={backgroundColor} onPress={this.toggleTheme} />
+        </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
