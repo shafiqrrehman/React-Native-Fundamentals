@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 
-const Input = ({inputValue, inputChange}) => {
-    console.log(inputValue)
-    // console.log(inputChange)
+const Input = ({ inputValue, inputChange }) => {
+    //console.log(inputValue)
+    //console.log(inputChange)
    return <View style={styles.inputContainer}>
         <TextInput 
             value={inputValue}
