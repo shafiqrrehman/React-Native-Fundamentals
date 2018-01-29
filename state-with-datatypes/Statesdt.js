@@ -24,7 +24,7 @@ class DataTypes extends React.Component {
 
         return (
             <View>
-                <Text>{this.state.year}</Text>
+                <Text>Year: {this.state.year}</Text>
                 <Text>Legnth: {this.state.info.length}</Text>
                 <Text>Type: {this.state.info.type}</Text>
                 {leapYear}
