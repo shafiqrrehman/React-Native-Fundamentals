@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     box: {
-        width: 250,
-        height: 250,
+        width: 150,
+        height: 150,
         backgroundColor: 'skyblue',
         borderWidth: 2,
         borderColor: 'steelblue',
